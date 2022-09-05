@@ -162,8 +162,9 @@ export default {
       this.fileList = fileList
     },
     success(res, file){
-      var response = config.parseData(res);
-      file.url = response.src
+      const response = config.parseData(res);
+			let mode = this.$TOOL.data.get('site_storage_mode').toUpperCase()
+      file.url = config.storage[mode] + response.src
     },
     progress(){
 

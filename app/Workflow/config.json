@@ -1,0 +1,9 @@
+{
+    "name": "Workflow",
+    "label": "工作流模块",
+    "description": "提供一套完善的企业办公审批功能、包括流程创建、启动、审批等功能",
+    "installed": true,
+    "enabled": true,
+    "version": "1.0.0",
+    "order": 0
+}

@@ -87,10 +87,10 @@ class OperationLogAspect extends AbstractAspect
         $loginUser = $this->container->get(LoginUser::class);
 
         $operationLog = [
-            'time' => date('Y-m-d H:i:s', $request->getServerParams()['request_time']),
-            'method' => $request->getServerParams()['request_method'],
-            'router' => $request->getServerParams()['path_info'],
-            'protocol' => $request->getServerParams()['server_protocol'],
+            'time' => date('Y-m-d H:i:s'),
+            'method' => $request->getMethod(),
+            'router' => $request->getUri()->getPath(),
+            'protocol' => $request->getProtocolVersion(),
             'ip' => $request->ip(),
             'ip_location' => Str::ipToRegion($request->ip()),
             'service_name' => $data['name'] ?: $this->getOperationMenuName($data['code']),

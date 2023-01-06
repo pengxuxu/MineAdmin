@@ -16,6 +16,9 @@
     <img src="https://svg.hamm.cn/badge.svg?key=License&value=Apache-2.0&color=da4a00" />
     <img src="https://svg.hamm.cn/badge.svg?key=MineAdmin&value=v1.0" />
 </p>
+
+> 当前Swow网络引擎为底层的版本是预览版本，不可用于生产环境。
+
 PHP有很多优秀的后台管理系统，但基于Swoole的后台管理系统没找到合适我自己的。
 所以就开发了一套后台管理系统。系统可以用于网站管理后台、CMS、CRM、OA、ERP等。
 

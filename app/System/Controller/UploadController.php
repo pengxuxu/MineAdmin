@@ -33,14 +33,8 @@ class UploadController extends MineController
     #[PostMapping("uploadFile"), Auth]
     public function uploadFile(UploadRequest $request): \Psr\Http\Message\ResponseInterface
     {
-        if ($request->validated() && $request->file('file')->isValid()) {
-            $data = $this->service->upload(
-                $request->file('file'), $request->all()
-            );
-            return empty($data) ? $this->error() : $this->success($data);
-        } else {
-            return $this->error(t('system.upload_file_verification_fail'));
-        }
+        $data = $this->service->upload($request->file('file'), $request->all());
+        return empty($data) ? $this->error(t('system.upload_file_verification_fail')) : $this->success($data);
     }
 
     /**
@@ -54,14 +48,8 @@ class UploadController extends MineController
     #[PostMapping("uploadImage"), Auth]
     public function uploadImage(UploadRequest $request): \Psr\Http\Message\ResponseInterface
     {
-        if ($request->validated() && $request->file('image')->isValid()) {
-            $data = $this->service->upload(
-                $request->file('image'), $request->all()
-            );
-            return empty($data) ? $this->error() : $this->success($data);
-        } else {
-            return $this->error(t('system.upload_image_verification_fail'));
-        }
+        $data = $this->service->upload($request->file('image'), $request->all());
+        return empty($data) ? $this->error(t('system.upload_image_verification_fail')) : $this->success($data);
     }
 
     /**

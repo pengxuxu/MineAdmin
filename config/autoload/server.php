@@ -11,7 +11,6 @@ declare(strict_types=1);
  */
 use Hyperf\Server\Server;
 use Hyperf\Server\Event;
-use Mine\MineServer;
 
 return [
     'type' => Hyperf\Server\SwowServer::class,
@@ -22,7 +21,7 @@ return [
             'host' => '0.0.0.0',
             'port' => 9501,
             'callbacks' => [
-                Event::ON_BEFORE_START => [Mine\MineStart::class, 'beforeStart'],
+                Event::ON_REQUEST => [Mine\MineServer::class, 'onRequest'],
             ],
         ],
     ],

@@ -17,19 +17,10 @@ use Hyperf\Utils\Filesystem\Filesystem;
 
 class Mine
 {
-    /**
-     * @var string
-     */
     private static string $version = '1.1.0';
 
-    /**
-     * @var string
-     */
     private string $appPath = '';
 
-    /**
-     * @var array
-     */
     private array $moduleInfo = [];
 
     /**
@@ -60,9 +51,6 @@ class Mine
         $this->setModuleInfo($infos);
     }
 
-    /**
-     * @return string
-     */
     public static function getVersion(): string
     {
         return self::$version;

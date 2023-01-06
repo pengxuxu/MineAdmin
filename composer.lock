@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3551f1700ee401f5177d46141babdd68",
+    "content-hash": "d8671d6abde158727300df919815da6d",
     "packages": [
         {
             "name": "aliyuncs/oss-sdk-php",
@@ -56,6 +56,93 @@
                 "source": "https://github.com/aliyun/aliyun-oss-php-sdk/tree/v2.6.0"
             },
             "time": "2022-08-03T08:06:01+00:00"
+        },
+        {
+            "name": "composer/semver",
+            "version": "3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/3953f23262f2bff1919fc82183ad9acb13ff62c9",
+                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.4",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/3.3.2"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-01T19:23:25+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -760,113 +847,6 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
-        },
-        {
-            "name": "easyswoole/spl",
-            "version": "1.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/easy-swoole/spl.git",
-                "reference": "3d02bceaf1031a78f959d41dab04e37121f9c58c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/spl/zipball/3d02bceaf1031a78f959d41dab04e37121f9c58c",
-                "reference": "3d02bceaf1031a78f959d41dab04e37121f9c58c",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.1.0"
-            },
-            "require-dev": {
-                "easyswoole/phpunit": "^1.0",
-                "easyswoole/swoole-ide-helper": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EasySwoole\\Spl\\": "src/",
-                    "EasySwoole\\Spl\\Test\\": "test/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "YF",
-                    "email": "291323003@qq.com"
-                }
-            ],
-            "description": "php stander lib",
-            "homepage": "https://www.easyswoole.com/",
-            "keywords": [
-                "async",
-                "easyswoole",
-                "framework",
-                "swoole"
-            ],
-            "support": {
-                "issues": "https://github.com/easy-swoole/spl/issues",
-                "source": "https://github.com/easy-swoole/spl/tree/1.4.1"
-            },
-            "time": "2022-02-02T12:04:48+00:00"
-        },
-        {
-            "name": "easyswoole/verifycode",
-            "version": "3.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/easy-swoole/verify-code.git",
-                "reference": "d79497dc1b1c7bbaeceb0c62fea6a9a96f7957cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/easy-swoole/verify-code/zipball/d79497dc1b1c7bbaeceb0c62fea6a9a96f7957cb",
-                "reference": "d79497dc1b1c7bbaeceb0c62fea6a9a96f7957cb",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "easyswoole/spl": "^1.0",
-                "ext-gd": "*",
-                "php": ">=7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "EasySwoole\\VerifyCode\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "YF",
-                    "email": "291323003@qq.com"
-                },
-                {
-                    "name": "evalor",
-                    "email": "mipone@foxmail.com"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/easy-swoole/verify-code/issues",
-                "source": "https://github.com/easy-swoole/verify-code/tree/3.0.2"
-            },
-            "time": "2020-07-28T04:12:59+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1816,6 +1796,67 @@
             "time": "2022-08-30T06:33:36+00:00"
         },
         {
+            "name": "hyperf/constants",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/constants.git",
+                "reference": "561a5e509cfdc08323b21f8d6fd4e9f11b941906"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/constants/zipball/561a5e509cfdc08323b21f8d6fd4e9f11b941906",
+                "reference": "561a5e509cfdc08323b21f8d6fd4e9f11b941906",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "hyperf/di": "~3.0.0",
+                "hyperf/utils": "~3.0.0",
+                "php": ">=8.0"
+            },
+            "suggest": {
+                "hyperf/translation": "Required to use translation."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\Constants\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\Constants\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A constants component for hyperf.",
+            "homepage": "https://hyperf.io",
+            "keywords": [
+                "constants",
+                "hyperf",
+                "php"
+            ],
+            "support": {
+                "docs": "https://hyperf.wiki",
+                "issues": "https://github.com/hyperf/hyperf/issues",
+                "pull-request": "https://github.com/hyperf/hyperf/pulls",
+                "source": "https://github.com/hyperf/hyperf"
+            },
+            "time": "2022-11-01T02:50:54+00:00"
+        },
+        {
             "name": "hyperf/context",
             "version": "v3.0.0",
             "source": {
@@ -2296,17 +2337,17 @@
             "time": "2022-08-30T06:33:36+00:00"
         },
         {
-            "name": "hyperf/engine",
-            "version": "v1.3.4",
+            "name": "hyperf/engine-contract",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hyperf/engine.git",
-                "reference": "392b44b1124c278c99b100b4c65189780b5f01c6"
+                "url": "https://github.com/hyperf/engine-contract.git",
+                "reference": "9ec24f3e36b3c3e621e11765585b203caf4d1caf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/engine/zipball/392b44b1124c278c99b100b4c65189780b5f01c6",
-                "reference": "392b44b1124c278c99b100b4c65189780b5f01c6",
+                "url": "https://api.github.com/repos/hyperf/engine-contract/zipball/9ec24f3e36b3c3e621e11765585b203caf4d1caf",
+                "reference": "9ec24f3e36b3c3e621e11765585b203caf4d1caf",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2320,24 +2361,98 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.0",
-                "hyperf/guzzle": "^2.2",
+                "mockery/mockery": "^1.0",
                 "phpstan/phpstan": "^1.0",
-                "phpunit/phpunit": "^9.4",
-                "swoole/ide-helper": "dev-master"
+                "phpunit/phpunit": ">=7.0",
+                "psr/http-message": "^1.0",
+                "swoole/ide-helper": "^4.5"
             },
             "suggest": {
-                "ext-swoole": ">=4.5"
+                "psr/http-message": "Required to use WebSocket Frame."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\Engine\\Contract\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Contract for Coroutine Engine",
+            "keywords": [
+                "contract",
+                "coroutine",
+                "engine",
+                "hyperf",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/hyperf/engine-contract/issues",
+                "source": "https://github.com/hyperf/engine-contract/tree/v1.2.0"
+            },
+            "time": "2023-01-04T08:21:59+00:00"
+        },
+        {
+            "name": "hyperf/engine-swow",
+            "version": "v2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/engine-swow.git",
+                "reference": "472fff43e8cbfc83f36f5749c923e63ff0da826c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/engine-swow/zipball/472fff43e8cbfc83f36f5749c923e63ff0da826c",
+                "reference": "472fff43e8cbfc83f36f5749c923e63ff0da826c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "hyperf/engine-contract": "^1.2",
+                "php": ">=8.0",
+                "swow/swow": "^1.0"
+            },
+            "replace": {
+                "hyperf/engine": "~2.1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "hyperf/framework": "^3.0",
+                "hyperf/http-server": "^3.0",
+                "mockery/mockery": "^1.4",
+                "phpstan/phpstan": "^1.0",
+                "phpunit/phpunit": "^9.4",
+                "psr/log": "^1.0|^2.0|^3.0"
+            },
+            "suggest": {
+                "hyperf/http-server": "Required to use ResponseEmitter.",
+                "psr/log": "Required to use HttpServer."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
                 },
                 "hyperf": {
                     "config": "Hyperf\\Engine\\ConfigProvider"
                 }
             },
             "autoload": {
+                "files": [
+                    "constants.php"
+                ],
                 "psr-4": {
                     "Hyperf\\Engine\\": "src/"
                 }
@@ -2351,10 +2466,10 @@
                 "php"
             ],
             "support": {
-                "issues": "https://github.com/hyperf/engine/issues",
-                "source": "https://github.com/hyperf/engine/tree/v1.3.4"
+                "issues": "https://github.com/hyperf/engine-swow/issues",
+                "source": "https://github.com/hyperf/engine-swow/tree/v2.1.4"
             },
-            "time": "2022-09-05T06:17:31+00:00"
+            "time": "2023-01-04T09:48:52+00:00"
         },
         {
             "name": "hyperf/event",
@@ -3167,6 +3282,68 @@
                 "source": "https://github.com/hyperf/hyperf"
             },
             "time": "2022-11-01T02:50:54+00:00"
+        },
+        {
+            "name": "hyperf/phar",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/phar.git",
+                "reference": "13b175adbafb74c3847fd2206f8d0a6dbb2b94b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/phar/zipball/13b175adbafb74c3847fd2206f8d0a6dbb2b94b0",
+                "reference": "13b175adbafb74c3847fd2206f8d0a6dbb2b94b0",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "hyperf/command": "~3.0.0",
+                "hyperf/contract": "~3.0.0",
+                "nikic/php-parser": "^4.1",
+                "php": ">=7.2",
+                "psr/container": "^1.0|^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\Phar\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hyperf\\Phar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A component that supports pack Hyperf project as a Phar stand-alone package.",
+            "homepage": "https://hyperf.io",
+            "keywords": [
+                "hyperf",
+                "phar",
+                "php",
+                "swoole"
+            ],
+            "support": {
+                "docs": "https://hyperf.wiki",
+                "issues": "https://github.com/hyperf/hyperf/issues",
+                "pull-request": "https://github.com/hyperf/hyperf/pulls",
+                "source": "https://github.com/hyperf/hyperf"
+            },
+            "time": "2022-12-10T13:24:37+00:00"
         },
         {
             "name": "hyperf/pool",
@@ -5497,92 +5674,6 @@
             "time": "2022-03-15T21:29:03+00:00"
         },
         {
-            "name": "phpmailer/phpmailer",
-            "version": "v6.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "49cd7ea3d2563f028d7811f06864a53b1f15ff55"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/49cd7ea3d2563f028d7811f06864a53b1f15ff55",
-                "reference": "49cd7ea3d2563f028d7811f06864a53b1f15ff55",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-ctype": "*",
-                "ext-filter": "*",
-                "ext-hash": "*",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
-                "doctrine/annotations": "^1.2.6 || ^1.13.3",
-                "php-parallel-lint/php-console-highlighter": "^1.0.0",
-                "php-parallel-lint/php-parallel-lint": "^1.3.2",
-                "phpcompatibility/php-compatibility": "^9.3.5",
-                "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.7.1",
-                "yoast/phpunit-polyfills": "^1.0.4"
-            },
-            "suggest": {
-                "ext-mbstring": "Needed to send email in multibyte encoding charset or decode encoded addresses",
-                "ext-openssl": "Needed for secure SMTP sending and DKIM signing",
-                "greew/oauth2-azure-provider": "Needed for Microsoft Azure XOAUTH2 authentication",
-                "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
-                "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
-                "psr/log": "For optional PSR-3 debug logging",
-                "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)",
-                "thenetworg/oauth2-azure": "Needed for Microsoft XOAUTH2 authentication"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PHPMailer\\PHPMailer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1-only"
-            ],
-            "authors": [
-                {
-                    "name": "Marcus Bointon",
-                    "email": "phpmailer@synchromedia.co.uk"
-                },
-                {
-                    "name": "Jim Jagielski",
-                    "email": "jimjag@gmail.com"
-                },
-                {
-                    "name": "Andy Prevost",
-                    "email": "codeworxtech@users.sourceforge.net"
-                },
-                {
-                    "name": "Brent R. Matzelle"
-                }
-            ],
-            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "support": {
-                "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.7.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/Synchro",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-12-08T13:30:06+00:00"
-        },
-        {
             "name": "phpoffice/phpspreadsheet",
             "version": "1.26.0",
             "source": {
@@ -6694,6 +6785,94 @@
             "time": "2022-11-25T16:15:06+00:00"
         },
         {
+            "name": "swow/swow",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swow/swow.git",
+                "reference": "2687d6c56f8b8f922773164ce4e1e569ee734733"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swow/swow/zipball/2687d6c56f8b8f922773164ce4e1e569ee734733",
+                "reference": "2687d6c56f8b8f922773164ce4e1e569ee734733",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "composer/semver": "^3.3",
+                "php": ">=8.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.0"
+            },
+            "replace": {
+                "swow/php-stub-generator": "*",
+                "swow/swow-library": "*",
+                "swow/swow-stub": "*",
+                "swow/swow-utils": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.13",
+                "phan/phan": "^5.4.1",
+                "phpstan/phpstan": "^1.9.2",
+                "phpunit/phpunit": "^9.5.26",
+                "rector/rector": "^0.12.23",
+                "vimeo/psalm": "^4.30.0"
+            },
+            "suggest": {
+                "ext-swow": "*"
+            },
+            "bin": [
+                "ext/bin/swow-builder"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/swow-library/src/bootstrap.php",
+                    "lib/swow-library/src/Debug/functions.php",
+                    "lib/swow-utils/src/functions.php"
+                ],
+                "psr-4": {
+                    "Swow\\": "lib/swow-library/src/",
+                    "Swow\\Utils\\": "lib/swow-utils/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "twose",
+                    "email": "twosee@php.net"
+                }
+            ],
+            "description": "Coroutine-based concurrency library for PHP",
+            "keywords": [
+                "async",
+                "client",
+                "coroutine",
+                "event",
+                "http",
+                "libcat",
+                "libuv",
+                "server",
+                "swow",
+                "websocket"
+            ],
+            "support": {
+                "issues": "https://github.com/swow/swow",
+                "source": "https://github.com/swow/swow/tree/v1.0.0"
+            },
+            "time": "2023-01-03T03:43:43+00:00"
+        },
+        {
             "name": "symfony/console",
             "version": "v6.0.17",
             "source": {
@@ -6869,16 +7048,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.4.17",
+            "version": "v6.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "40c08632019838dfb3350f18cf5563b8080055fc"
+                "reference": "d467d625fc88f7cebf96f495e588a7196a669db1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/40c08632019838dfb3350f18cf5563b8080055fc",
-                "reference": "40c08632019838dfb3350f18cf5563b8080055fc",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/d467d625fc88f7cebf96f495e588a7196a669db1",
+                "reference": "d467d625fc88f7cebf96f495e588a7196a669db1",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -6888,9 +7067,7 @@
                 ]
             },
             "require": {
-                "php": ">=7.2.5",
-                "symfony/deprecation-contracts": "^2.1|^3",
-                "symfony/polyfill-php80": "^1.16"
+                "php": ">=8.0.2"
             },
             "type": "library",
             "autoload": {
@@ -6918,7 +7095,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.4.17"
+                "source": "https://github.com/symfony/finder/tree/v6.0.17"
             },
             "funding": [
                 {
@@ -6934,7 +7111,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-22T10:31:03+00:00"
+            "time": "2022-12-22T17:53:58+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -8525,14 +8702,13 @@
         },
         {
             "name": "xmo/jwt-auth",
-            "version": "v0.4.0",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://gitee.com/xmo/jwt-auth",
-                "reference": "523f2c8b4672495918241bbb76ca716deb12274c"
+                "reference": "7cd50b5cd1ef08bdc00042219535775322b69639"
             },
             "require": {
-                "ext-swoole": ">=4.6",
                 "lcobucci/jwt": "~4.1.0",
                 "nesbot/carbon": "^1.0 || ^2.0",
                 "php": ">=7.4"
@@ -8571,7 +8747,7 @@
                 "hyperf",
                 "php"
             ],
-            "time": "2022-10-07T13:16:08+00:00"
+            "time": "2023-01-06T01:40:11+00:00"
         },
         {
             "name": "xxtime/flysystem-aliyun-oss",
@@ -8632,65 +8808,17 @@
             "time": "2019-11-12T07:57:34+00:00"
         },
         {
-            "name": "yurunsoft/phpmailer-swoole",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Yurunsoft/PHPMailer-Swoole.git",
-                "reference": "ec09ff66f6e9eb8b94b8574545357dc52e91c0a5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Yurunsoft/PHPMailer-Swoole/zipball/ec09ff66f6e9eb8b94b8574545357dc52e91c0a5",
-                "reference": "ec09ff66f6e9eb8b94b8574545357dc52e91c0a5",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": ">=7.0",
-                "phpmailer/phpmailer": "~6.0"
-            },
-            "require-dev": {
-                "swoft/swoole-ide-helper": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/PHPMailer/functions.php"
-                ],
-                "psr-4": {
-                    "PHPMailer\\PHPMailer\\": "src/PHPMailer",
-                    "Yurun\\Util\\Swoole\\PHPMailer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1"
-            ],
-            "description": "PHPMailer 支持 Swoole 协程环境",
-            "support": {
-                "issues": "https://github.com/Yurunsoft/PHPMailer-Swoole/issues",
-                "source": "https://github.com/Yurunsoft/PHPMailer-Swoole/tree/master"
-            },
-            "time": "2019-10-24T07:46:26+00:00"
-        },
-        {
             "name": "zircote/swagger-php",
-            "version": "4.5.3",
+            "version": "4.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zircote/swagger-php.git",
-                "reference": "e505bce612a86fe90f8fd50917e0848afc5d2ba8"
+                "reference": "09356f4d68d29bdf3254811fb2602a5d5d1788ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/e505bce612a86fe90f8fd50917e0848afc5d2ba8",
-                "reference": "e505bce612a86fe90f8fd50917e0848afc5d2ba8",
+                "url": "https://api.github.com/repos/zircote/swagger-php/zipball/09356f4d68d29bdf3254811fb2602a5d5d1788ea",
+                "reference": "09356f4d68d29bdf3254811fb2602a5d5d1788ea",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -8700,7 +8828,7 @@
                 ]
             },
             "require": {
-                "doctrine/annotations": "^1.7",
+                "doctrine/annotations": "^1.7 || ^2.0",
                 "ext-json": "*",
                 "php": ">=7.2",
                 "psr/log": "^1.1 || ^2.0 || ^3.0",
@@ -8759,9 +8887,9 @@
             ],
             "support": {
                 "issues": "https://github.com/zircote/swagger-php/issues",
-                "source": "https://github.com/zircote/swagger-php/tree/4.5.3"
+                "source": "https://github.com/zircote/swagger-php/tree/4.5.4"
             },
-            "time": "2022-12-21T18:26:59+00:00"
+            "time": "2023-01-04T00:51:43+00:00"
         },
         {
             "name": "zoujingli/ip2region",
@@ -8892,93 +9020,6 @@
                 }
             ],
             "time": "2022-11-03T20:24:16+00:00"
-        },
-        {
-            "name": "composer/semver",
-            "version": "3.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/3953f23262f2bff1919fc82183ad9acb13ff62c9",
-                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.4",
-                "symfony/phpunit-bridge": "^4.2 || ^5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.3.2"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-04-01T19:23:25+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -9370,65 +9411,6 @@
             "time": "2022-11-01T02:50:54+00:00"
         },
         {
-            "name": "hyperf/watcher",
-            "version": "v3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hyperf/watcher.git",
-                "reference": "2fa0770171d3e1d7576f3c66a9cbeb479fe1daca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hyperf/watcher/zipball/2fa0770171d3e1d7576f3c66a9cbeb479fe1daca",
-                "reference": "2fa0770171d3e1d7576f3c66a9cbeb479fe1daca",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-posix": "*",
-                "hyperf/command": "~3.0.0",
-                "hyperf/di": "~3.0.0",
-                "hyperf/framework": "~3.0.0",
-                "php": ">=8.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                },
-                "hyperf": {
-                    "config": "Hyperf\\Watcher\\ConfigProvider"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Functions.php"
-                ],
-                "psr-4": {
-                    "Hyperf\\Watcher\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Hot reload watcher for Hyperf",
-            "keywords": [
-                "hyperf",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/hyperf/watcher/issues",
-                "source": "https://github.com/hyperf/watcher/tree/v3.0.0"
-            },
-            "time": "2022-12-27T02:58:03+00:00"
-        },
-        {
             "name": "mockery/mockery",
             "version": "1.5.1",
             "source": {
@@ -9696,16 +9678,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.100",
+            "version": "1.9.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "48236ddf823547081b2b153d1cd2994b784328c3"
+                "reference": "0501435cd342eac7664bd62155b1ef907fc60b6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/48236ddf823547081b2b153d1cd2994b784328c3",
-                "reference": "48236ddf823547081b2b153d1cd2994b784328c3",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0501435cd342eac7664bd62155b1ef907fc60b6f",
+                "reference": "0501435cd342eac7664bd62155b1ef907fc60b6f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -9715,7 +9697,7 @@
                 ]
             },
             "require": {
-                "php": "^7.1|^8.0"
+                "php": "^7.2|^8.0"
             },
             "conflict": {
                 "phpstan/phpstan-shim": "*"
@@ -9725,11 +9707,6 @@
                 "phpstan.phar"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.12-dev"
-                }
-            },
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -9740,9 +9717,13 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.100"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.7"
             },
             "funding": [
                 {
@@ -9758,7 +9739,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-01T09:52:08+00:00"
+            "time": "2023-01-04T21:59:57+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -11277,54 +11258,6 @@
             "time": "2020-09-28T06:39:44+00:00"
         },
         {
-            "name": "swoole/ide-helper",
-            "version": "4.8.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/swoole/ide-helper.git",
-                "reference": "afe3a09f8c49a6011e2206a03e55e391d97d81b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/swoole/ide-helper/zipball/afe3a09f8c49a6011e2206a03e55e391d97d81b0",
-                "reference": "afe3a09f8c49a6011e2206a03e55e391d97d81b0",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Team Swoole",
-                    "email": "team@swoole.com"
-                }
-            ],
-            "description": "IDE help files for Swoole.",
-            "support": {
-                "issues": "https://github.com/swoole/ide-helper/issues",
-                "source": "https://github.com/swoole/ide-helper/tree/4.8.12"
-            },
-            "funding": [
-                {
-                    "url": "https://gitee.com/swoole/swoole?donate=true",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/swoole",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-09-22T16:31:12+00:00"
-        },
-        {
             "name": "symfony/event-dispatcher",
             "version": "v6.0.17",
             "source": {
@@ -11930,8 +11863,9 @@
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "ext-redis": "*",
-        "ext-swoole": ">=4.5"
+        "ext-sodium": "*",
+        "ext-sockets": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

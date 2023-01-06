@@ -39,7 +39,7 @@ class MineCrontabStrategy
         co(function() use($crontab) {
             if ($crontab->getExecuteTime() instanceof Carbon) {
                 $wait = $crontab->getExecuteTime()->getTimestamp() - time();
-                $wait > 0 && \Swoole\Coroutine::sleep($wait);
+                $wait > 0 && sleep($wait);
                 $this->executor->execute($crontab);
             }
         });

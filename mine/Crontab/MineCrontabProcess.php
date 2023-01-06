@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Mine\Crontab;
 
-use Swoole\Server;
-use Hyperf\Crontab\Crontab;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\Process\ProcessManager;
 use Hyperf\Process\AbstractProcess;
@@ -32,24 +30,19 @@ class MineCrontabProcess extends AbstractProcess
     public string $name = 'MineAdmin Crontab';
 
     /**
-     * @var Server
-     */
-    private $server;
-
-    /**
      * @var MineCrontabScheduler
      */
-    private $scheduler;
+    private MineCrontabScheduler $scheduler;
 
     /**
-     * @var StrategyInterface
+     * StrategyInterface
      */
     private $strategy;
 
     /**
      * @var StdoutLoggerInterface
      */
-    private $logger;
+    private StdoutLoggerInterface $logger;
 
     /**
      * @var MineCrontabManage
@@ -70,15 +63,9 @@ class MineCrontabProcess extends AbstractProcess
         $this->logger = $container->get(StdoutLoggerInterface::class);
     }
 
-    public function bind($server): void
-    {
-        $this->server = $server;
-        parent::bind($server);
-    }
-
     /**
      * 是否自启进程
-     * @param \Swoole\Coroutine\Server|\Swoole\Server $server
+     * @param $server
      * @return bool
      */
     public function isEnable($server): bool
@@ -115,6 +102,6 @@ class MineCrontabProcess extends AbstractProcess
         $current = date('s', time());
         $sleep = 60 - $current;
         $this->logger->debug('MineAdmin Crontab dispatcher sleep ' . $sleep . 's.');
-        $sleep > 0 && \Swoole\Coroutine::sleep($sleep);
+        $sleep > 0 && sleep($sleep);
     }
 }

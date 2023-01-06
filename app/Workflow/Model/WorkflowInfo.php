@@ -28,21 +28,21 @@ class WorkflowInfo extends MineModel
     /**
      * The table associated with the model.
      *
-     * @var string
+     * @var string|null
      */
-    protected $table = 'workflow_info';
+    protected ?string $table = 'workflow_info';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['id', 'group_id', 'workflow_form_id', 'icon', 'icon_bg_color', 'title', 'desc', 'status', 'node_source', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_at', 'remark'];
+    protected array $fillable = ['id', 'group_id', 'workflow_form_id', 'icon', 'icon_bg_color', 'title', 'desc', 'status', 'node_source', 'created_by', 'updated_by', 'created_at', 'updated_at', 'deleted_at', 'remark'];
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
-    protected $casts = ['id' => 'integer', 'group_id' => 'integer', 'workflow_form_id' => 'integer', 'status' => 'integer', 'created_by' => 'integer', 'updated_by' => 'integer', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+    protected array $casts = ['id' => 'integer', 'group_id' => 'integer', 'workflow_form_id' => 'integer', 'status' => 'integer', 'created_by' => 'integer', 'updated_by' => 'integer', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
 
     /**
      * 定义 workflowGpoup 关联

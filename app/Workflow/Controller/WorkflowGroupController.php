@@ -54,6 +54,18 @@ class WorkflowGroupController extends MineController
     }
 
     /**
+     * 无分页列表，无需权限
+     * @return ResponseInterface
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
+    #[GetMapping("list")]
+    public function list(): ResponseInterface
+    {
+        return $this->success($this->service->getList($this->request->all()));
+    }
+
+    /**
      * 回收站列表
      * @return ResponseInterface
      * @throws \Psr\Container\ContainerExceptionInterface

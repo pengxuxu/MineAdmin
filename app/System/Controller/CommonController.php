@@ -245,4 +245,46 @@ class CommonController extends MineController
             ['label' => '99', 'value' => '99'],
         ]);
     }
+
+    #[GetMapping("cascader")]
+    public function cascader(): ResponseInterface
+    {
+        $key = $this->request->input('key');
+
+        if ($key == '1') {
+            return $this->success([
+                ['label' => '红色', 'value' => 'red', 'disabled' => true ],
+                ['label' => '蓝色', 'value' => 'blue'],
+            ]);
+        } else if ($key == '2') {
+            return $this->success([
+                ['label' => '紫色', 'value' => 'zise'],
+                ['label' => '绿色', 'value' => 'green'],
+                ['label' => '黑色', 'value' => 'black'],
+            ]);
+        } else {
+            return $this->success([]);
+        }
+    }
+
+    #[GetMapping("cascader2")]
+    public function cascader2(): ResponseInterface
+    {
+        $key = $this->request->input('key');
+
+        if ($key == 'red') {
+            return $this->success([
+                ['label' => '55', 'value' => '55'],
+                ['label' => '66', 'value' => '66'],
+            ]);
+        } else if ($key == 'blue') {
+            return $this->success([
+                ['label' => '77', 'value' => '77'],
+                ['label' => '88', 'value' => '88'],
+
+            ]);
+        } else {
+            return $this->success([]);
+        }
+    }
 }

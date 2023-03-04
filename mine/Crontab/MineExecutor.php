@@ -27,7 +27,7 @@ use Hyperf\Guzzle\ClientFactory;
 use Hyperf\Utils\Coroutine;
 use Mine\MineModel;
 use Psr\Container\ContainerInterface;
-use Swoole\Timer;
+use Hyperf\Coordinator\Timer;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use App\Setting\Model\SettingCrontab;

@@ -17,6 +17,8 @@ use Hyperf\Database\Model\Model;
 use Mine\Annotation\Transaction;
 use Mine\MineCollection;
 use Mine\MineModel;
+use Hyperf\ModelCache\Manager;
+use Hyperf\Utils\ApplicationContext;
 
 trait MapperTrait
 {
@@ -267,6 +269,10 @@ trait MapperTrait
     public function delete(array $ids): bool
     {
         $this->model::destroy($ids);
+
+        $manager = ApplicationContext::getContainer()->get(Manager::class);
+        $manager->destroy($ids,$this->model);
+
         return true;
     }
 

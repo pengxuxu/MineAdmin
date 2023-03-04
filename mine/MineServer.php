@@ -18,6 +18,8 @@ class MineServer extends Server
 {
     protected ?string $serverName = 'MineAdmin';
 
+    protected $routes;
+
     public function onRequest($request, $response): void
     {
         parent::onRequest($request, $response);

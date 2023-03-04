@@ -51,6 +51,9 @@ class Mine
         $this->setModuleInfo($infos);
     }
 
+    /**
+     * @return string
+     */
     public static function getVersion(): string
     {
         return self::$version;

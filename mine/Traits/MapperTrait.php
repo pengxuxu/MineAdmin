@@ -15,10 +15,13 @@ use Hyperf\Contract\LengthAwarePaginatorInterface;
 use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Model;
 use Mine\Annotation\Transaction;
+use Mine\Exception\NormalStatusException;
 use Mine\MineCollection;
 use Mine\MineModel;
 use Hyperf\ModelCache\Manager;
 use Hyperf\Utils\ApplicationContext;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 trait MapperTrait
 {
@@ -61,7 +64,7 @@ trait MapperTrait
     public function setPaginate(LengthAwarePaginatorInterface $paginate): array
     {
         return [
-            'items' => $paginate->items(),
+            'items' => method_exists($this, 'handlePageItems') ? $this->handlePageItems($paginate->items()) : $paginate->items(),
             'pageInfo' => [
                 'total' => $paginate->total(),
                 'currentPage' => $paginate->currentPage(),
@@ -265,6 +268,8 @@ trait MapperTrait
      * 单个或批量软删除数据
      * @param array $ids
      * @return bool
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function delete(array $ids): bool
     {
@@ -451,5 +456,143 @@ trait MapperTrait
     public function numberOperation(int $id, string $field, int $value): bool
     {
         return $this->update($id, [ $field => $value]);
+    }
+
+    /**
+     * 搜索参数注入
+     * @param $params
+     * @param array $where
+     * @param \Hyperf\Database\Model\Builder|null $query
+     * @return \Mine\MineModel|\Hyperf\Database\Model\Builder
+     */
+    public function paramsEmptyQuery($params, array $where = [], Builder $query = null): MineModel|Builder
+    {
+        if (!$query) {
+            $query = $this->model::query();
+        }
+
+        $object = new class($params, $where) {
+            public array $paramsWhere = [];
+
+            public function __construct($params, $where)
+            {
+                foreach ($params as $field => $value) {
+                    if (isset($where[$field])) {
+                        $this->caseWhere($field, $where[$field], $value);
+                    }
+                }
+            }
+
+            public function caseWhere($field, $operator, $value): void
+            {
+                if (is_scalar($operator)) {
+                    $res = $this->scalarOptionHandle($field, $operator, $value);
+                } else if (is_array($operator)) {
+                    $res = $this->arrayOptionHandle($field, $operator, $value);
+                } else {
+                    $res = $this->scalarOptionHandle($field, $operator, $value);
+                }
+                $this->paramsWhere[ $res[0]] = [$res[1], $res[2] ];
+            }
+
+            /**
+             * 标量类型获取
+             * @param $field
+             * @param $operator
+             * @param $value
+             * @return array
+             */
+            public function scalarOptionHandle($field, $operator, $value): array
+            {
+                return [$field, $operator, $value];
+            }
+
+            /**
+             * 数组类型处理
+             * @param $field
+             * @param $operator
+             * @param $value
+             * @return array
+             */
+            public function arrayOptionHandle($field, $operator, $value): array
+            {
+                return [$field, $operator, $value];
+            }
+
+            public function getParamsWhere(): array
+            {
+                return $this->paramsWhere;
+            }
+        };
+        return $this->emptyBuildQuery($object->getParamsWhere(), $query);
+    }
+
+    /**
+     * 非空查询方法
+     * 案例
+     * [
+     *  'field' => 1,
+     *  'field' => ['=', 'index']
+     * ]
+     * @param array $paramsWhere
+     * @param $query
+     * @return \Mine\MineModel|\Hyperf\Database\Model\Builder
+     */
+    public function emptyBuildQuery(array $paramsWhere = [], $query = null): MineModel|Builder
+    {
+        if (!$query) {
+            $query = $this->model::query();
+        }
+        $object = new class($paramsWhere, $query){
+
+            public Builder $query;
+
+            public function __construct($paramsWhere, Builder $query)
+            {
+                $this->query = $query;
+                foreach ($paramsWhere as $field => $value) {
+                    if ($value) {
+                        if (is_scalar($value)) {
+                            $this->scalarWhere($field, '=', $value);
+                        } else if (is_array($value)) {
+                            $this->arrayWhere($field, $value);
+                        }
+                    }
+                }
+            }
+
+            public function scalarWhere($field, $operator, $value): void
+            {
+                [ $operator, $value ] = $this->optionHandler($field, $operator, $value);
+                $this->query->where($field, $operator, $value);
+            }
+
+            private function arrayWhere($field, $value): void
+            {
+                [ $value[0], $value[1] ] = $this->optionHandler($field, $value[0], $value[1]);
+                $this->query->where($field, $value[0], $value[1]);
+            }
+
+            public function optionHandler($field, $operator, $value): array
+            {
+                switch ($operator) {
+                    case 'like':
+                    case 'like%':
+                        if (is_scalar($value)) {
+                            throw new NormalStatusException("{$field} type error:The expectation is a string");
+                        }
+                        $likeMap = ['like' => '%#{val}%', 'like%' => '#{val}%'];
+                        $value = str_replace("#{val}", $value, $likeMap[$operator]);
+                    break;
+                }
+                return [$operator, $value];
+            }
+
+            public function getQuery(): Builder
+            {
+                return $this->query;
+            }
+        };
+        return $object->getQuery();
     }
 }

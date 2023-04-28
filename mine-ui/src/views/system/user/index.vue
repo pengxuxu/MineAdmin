@@ -435,10 +435,9 @@
           
           let filterNode = (nodes) => {
             nodes.map(item => {
+							ids.push(item.id)
               if (item.children && item.children.length > 0) {
                 filterNode(item.children)
-              } else {
-                ids.push(item.id)
               }
             })
           }
